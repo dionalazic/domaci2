@@ -19,9 +19,9 @@ class CarController extends Controller
         return CarResource::collection($cars);
     }
 
-    public function show(Car $car)
+    public function show($car_id)
     {
-        return new CarResource($car);
+        return new CarResource(Car::find($car_id));
     }
 
     /**
